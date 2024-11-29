@@ -1,0 +1,17 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname p4-ip) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+(check-expect (is-palindrome "") #true)
+(check-expect (is-palindrome "A") #true)
+(check-expect (is-palindrome "AB") #false)
+(check-expect (is-palindrome "!!!!!##^&^&*^&*^   ^&#$#@((*&^") #true)
+(check-expect (is-palindrome "racecar") #true)
+(check-expect (is-palindrome "Ra C##E!!c  AR     )") #true)
+(check-expect (is-palindrome "otherwise") #false)
+(check-expect (is-palindrome "almost the same ems eht tsomla") #false)
+(check-expect (is-palindrome "lolol67890") #false)
+(check-expect (is-palindrome "123l456") #false)
+(check-expect (is-palindrome "!!!!!##^&^&*^&*^aff   a^&#$d#@((*&^") #false)
+(check-expect (is-palindrome "&^treeert^&") #true)
+(check-expect (is-palindrome "ARERA") #true)
+(check-expect (is-palindrome "cannottotototonnac") #false)

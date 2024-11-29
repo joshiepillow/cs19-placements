@@ -1,0 +1,15 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname p3-vw) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+(check-expect (valid-words '() (list #\a #\b #\c)) '())
+(check-expect (valid-words (list "abc") '()) '())
+(check-expect (valid-words '() '()) '())
+(check-expect (valid-words (list "abc" "ab" "a" "" "cd" "abcd" "dab" "0")
+                           (list #\a #\b #\d))
+              (list "ab" "a" "" "dab"))
+(check-expect (valid-words (list "abc" "ab" "a" "cd" "abcd" "dab" "0")
+                           (list #\x  #\y  #\z  #\1  #\2  #\3  #\4  #\5))
+              '())
+(check-expect (valid-words (list "abc" "ab" "a" "cd" "abcd" "dab" "00000000000000000000")
+                           (list #\x  #\y  #\z  #\1  #\2  #\3  #\4  #\0))
+              (list "00000000000000000000"))
